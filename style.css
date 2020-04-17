@@ -1,0 +1,351 @@
+/** Add any CSS you need to this file. */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+p {
+  line-height: 2;
+}
+
+/* Logo */
+
+.logo {
+  z-index: 20;
+  position: fixed;
+  margin: 10px;
+}
+
+.logo img {
+  height: 100px;
+  filter: contrast(200%) brightness(150%);
+  filter: drop-shadow(8px 8px 10px rgb(3, 0, 0));
+  transition: 0.4s;
+}
+
+/* Navigation menu */
+
+nav {
+  z-index: 10;
+  padding: 24px 16px;
+  font-family: 'Raleway';
+  position: fixed;
+  width: 100%;
+  transition: 0.6s;
+}
+
+nav.scrolled {
+  background-color: #1a1a1a;
+  box-shadow: 0px 4px 4px 0px rgba(50, 50, 50, 0.1);
+}
+nav.scrolled + .logo img {
+  height: 60px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+nav ul li {
+  display: flex;
+  flex-wrap: wrap;
+}
+#menu-kids {
+  margin-right: 22px;
+}
+#menu-men {
+  padding-left: 22px;
+}
+button {
+  background-color: rgba(245, 245, 245, 0.034);
+  text-decoration: none;
+  margin: 0 32px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-size: 15px;
+  padding: 5px;
+  font-size: 11px;
+  color: white;
+}
+
+button:hover {
+  background-color: rgba(173, 216, 230, 0.308);
+}
+a:hover {
+  color: gray;
+}
+.ach {
+  font-size: 14px;
+  text-align: center;
+  color: rgb(207, 206, 206);
+  border: 2px solid rgb(207, 206, 206);
+  padding: 5px 4px 5px 4px;
+}
+/* Header */
+
+header {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('img/background3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Raleway';
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 120px;
+}
+
+.men {
+  width: 100%;
+  height: auto;
+  border: 1px solid white;
+  background-color: white;
+  padding: 5px 5px 5px 5px;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+#men h1 {
+  background-color: white;
+}
+.women {
+  width: 100%;
+  height: auto;
+  border: 1px solid white;
+  background-color: white;
+  padding: 5px 5px 5px 5px;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+.kids {
+  width: 100%;
+  height: auto;
+  border: 1px solid white;
+  background-color: white;
+  padding: 5px 5px 5px 5px;
+  padding-left: 3%;
+  padding-right: 3%;
+  /*margin-bottom: 150px;*/
+}
+
+.col img {
+  width: 100%;
+  height: 300px;
+  display: block;
+}
+
+.col {
+  width: 33.3%;
+  float: left;
+  padding: 2px;
+}
+.description p {
+  font-size: 20px;
+  line-height: 1;
+}
+.col img:hover {
+  padding: 5px;
+}
+/*
+.col:hover {
+  padding: 10px 10px 10px 10px;
+}
+/* Sections */
+
+/* Footer */
+
+footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 32px 0;
+  background-color: #1a1a1a;
+  color: #eee;
+  font-family: 'Raleway';
+  text-align: center;
+}
+
+b {
+  cursor: pointer;
+}
+
+.menu-btn {
+  display: none;
+}
+
+/* Media Queries */
+
+@media (max-width: 867px) {
+  header h1 {
+    font-size: 65px;
+  }
+
+  nav {
+    display: flex;
+    height: 100vh;
+    transform: scaleY(0) translateY(1200px);
+    /* background: rgba(255, 255, 255, 0.8);*/
+    background-color: black;
+    transition: 0.4s;
+  }
+
+  nav.active {
+    transform: scaleY(1) translateY(0px);
+  }
+  nav ul {
+    margin: 0 auto;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  nav ul li {
+    padding: 42px 0;
+  }
+
+  nav li a {
+    font-size: 20px;
+    position: relative;
+  }
+
+  nav li a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 24px;
+    width: 60%;
+    margin: 0 auto;
+    border-bottom: 1px solid black;
+  }
+
+  /* Men */
+  .col {
+    width: 50%;
+  }
+
+  /* Menu Icon */
+  .menu-btn {
+    z-index: 10;
+    color: white;
+    display: block;
+    position: fixed;
+    right: 16px;
+    top: 16px;
+    font-size: 64px;
+    transition: 0.4s;
+    font-family: 'Roboto Slab';
+    cursor: pointer;
+    transform: rotate(0deg);
+  }
+
+  .menu-btn.active {
+    transform: rotate(90deg);
+  }
+
+  footer {
+    bottom: 0;
+  }
+}
+
+/* mobile devices*/
+
+@media (max-width: 450px) {
+  header h1 {
+    font-size: 65px;
+  }
+
+  nav {
+    display: flex;
+    height: 100vh;
+    transform: scaleY(0) translateY(1200px);
+    /* background: rgba(255, 255, 255, 0.8);*/
+    background-color: black;
+    transition: 0.4s;
+  }
+
+  nav.active {
+    transform: scaleY(1) translateY(0px);
+  }
+
+  nav ul {
+    margin: 0 auto;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  nav ul li {
+    padding: 42px 0;
+  }
+
+  nav li a {
+    font-size: 20px;
+    position: relative;
+  }
+
+  nav li a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 24px;
+    width: 60%;
+    margin: 0 auto;
+    border-bottom: 1px solid black;
+  }
+
+  /* Men */
+  .col {
+    width: 100%;
+  }
+
+  /* Menu Icon */
+  .menu-btn {
+    z-index: 10;
+    color: white;
+    display: block;
+    position: fixed;
+    right: 16px;
+    top: 16px;
+    font-size: 64px;
+    transition: 0.4s;
+    font-family: 'Roboto Slab';
+    cursor: pointer;
+    transform: rotate(0deg);
+  }
+
+  .menu-btn.active {
+    transform: rotate(90deg);
+  }
+
+  footer {
+    bottom: 0;
+  }
+}
+
+/* contact HTML file */
+
+.hidden {
+  display: none;
+}
+
+#subscribe:hover {
+  cursor: pointer;
+  background-color: grey;
+}
